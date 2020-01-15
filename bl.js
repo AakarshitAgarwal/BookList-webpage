@@ -30,6 +30,24 @@ class UI{
     }
 }
 
+static addBookToList(Book){
+
+    const list = document.querySelector("#book-list")';
+    
+
+}
+static addBookToList(book) {
+    const list = document.querySelector("#book-list");
+    const row = document.createElement('tr');  //tr is just like books row heading
+    row.innerHTML = `
+                <td>${book.title}</td>
+                <td>${book.author}</td>
+                <td>${book.isbn}</td>
+                <td><a href='#' class="btn btn-danger btn-sm delete">X</a></td>
+                `;
+    list.appendChild(row);   //btn btn-danger btn-sm delete is used to create red box over the cross sign
+
+}
 // document.addEventListener('DOMContentLoaded',()=>{
 //     //  console.log("hello"+books);
 //      console.log(typeof(books));
@@ -39,3 +57,4 @@ class UI{
 // })
 
 document.addEventListener('DOMContentloaded',UI.displaybook());
+document.querySelector('#book-form').addEventListener('submit', (e) => {
